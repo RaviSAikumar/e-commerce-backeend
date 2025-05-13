@@ -11,7 +11,14 @@ connectToDB();
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173", // No trailing slash
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
+
+app.use(
+  cors({
+    origin: "https://shopping-eight-alpha.vercel.app",
     credentials: true,
   })
 );
