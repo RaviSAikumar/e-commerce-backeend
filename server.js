@@ -11,6 +11,7 @@ const categoryRoutes = require("./routers/category-routes");
 const subCategoryRoutes = require("./routers/subcategory-routes");
 const brandRoutes = require("./routers/brand-routes");
 const cartRoutes = require("./routers/cart-routes");
+const orderRoutes = require("./routers/order-routes");
 connectToDB();
 
 const app = express();
@@ -43,6 +44,7 @@ app.use("/api/brands", brandRoutes);
 
 //add to cart
 app.use("/api/cart", cartRoutes);
+app.use("/api/order", orderRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

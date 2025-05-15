@@ -139,10 +139,33 @@ const updateCartItemQuantity = async (req, res) => {
       .json({ success: false, message: "Server error", error: error.message });
   }
 };
+const clearCart = async (req, res) => {
+  const userId = req.user.userId;
 
+  try {
+    const cart = await Cart.findOne({ user: userId });
+    if (!cart) {
+      // If no cart exists, nothing to clear
+      return res.status(200).json({
+        success: true,
+        message: "Cart is already empty",
+        cart: { items: [] },
+      });
+    }
+    cart.items = [];
+    await cart.save();
+
+    res.status(200).json({ success: true, message: "Cart cleared", cart });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ success: false, message: "Server error", error: error.message });
+  }
+};
 module.exports = {
   addToCart,
   getCartItems,
   removeFromCart,
   updateCartItemQuantity,
+  clearCart,
 };
