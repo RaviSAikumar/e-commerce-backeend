@@ -3,7 +3,7 @@ const router = express.Router();
 const brandController = require("../controllers/brand-controller");
 
 // POST - Create a new brand
-router.post("/", brandController.createBrand);
+router.post("/create", brandController.createBrand);
 
 // GET - Fetch all brands
 router.get("/", brandController.getAllBrands);

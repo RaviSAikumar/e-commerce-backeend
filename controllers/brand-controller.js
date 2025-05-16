@@ -1,4 +1,4 @@
-const { Brand } = require("../models/Brand");
+const Brand = require("../models/Brand");
 
 exports.createBrand = async (req, res) => {
   try {
