@@ -17,10 +17,7 @@ connectToDB();
 const app = express();
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "shopping-ravi-sai-kumars-projects.vercel.app",
-    ],
+    origin: ["http://localhost:5173", "https://shopping-tau-gray.vercel.app"],
     credentials: true,
   })
 );
