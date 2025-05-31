@@ -19,7 +19,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://shopping-eight-alpha.vercel.app",
+      "shopping-ravi-sai-kumars-projects.vercel.app",
     ],
     credentials: true,
   })

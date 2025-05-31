@@ -6,7 +6,7 @@ const brandController = require("../controllers/brand-controller");
 router.post("/create", brandController.createBrand);
 
 // GET - Fetch all brands
-router.get("/", brandController.getAllBrands);
+router.get("/allbrands", brandController.getAllBrands);
 
 // GET - Fetch a single brand by ID
 router.get("/:id", brandController.getBrandById);
